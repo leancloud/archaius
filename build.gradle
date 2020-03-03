@@ -10,6 +10,7 @@ subprojects {
     apply plugin: 'nebula.netflixoss'
     apply plugin: 'nebula.provided-base'
     apply plugin: 'java'
+    apply plugin: 'com.bmuschko.nexus'
 
     sourceCompatibility = 1.6
     targetCompatibility = 1.6
@@ -19,9 +20,10 @@ subprojects {
     }
     dependencies {
         compile 'com.google.code.findbugs:jsr305:3.0.1'
+        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
         testCompile('log4j:log4j:1.2.16')
     }
-    group = "com.netflix.${githubProjectName}" 
+    group = "cn.leancloud"
 
     tasks.withType(Test) { forkEvery = 1 }
     test {
@@ -32,6 +34,10 @@ subprojects {
             showStandardStreams  = true
         }
 
+    }
+
+    nexus {
+        sign = true
     }
 }
 
