@@ -231,7 +231,7 @@ public class PollingSourceTest {
         Assert.assertTrue(eventCapture.getAllValues().get(0).isBeforeUpdate());
 
         Assert.assertEquals(DynamicConfiguration.EVENT_RELOAD, errorCapture.getAllValues().get(0).getType());
-        Assert.assertTrue(eventCapture.getAllValues().get(0).isBeforeUpdate());
+        Assert.assertTrue(errorCapture.getAllValues().get(0).isBeforeUpdate());
     }
 }
 
