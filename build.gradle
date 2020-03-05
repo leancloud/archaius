@@ -1,7 +1,7 @@
 plugins {
     id 'nebula.netflixoss' version '2.2.10'
     id 'nebula.provided-base' version '2.0.1'
-    id 'maven-publish' apply false
+    id 'maven-publish'
 }
 
 // Establish version and status
@@ -23,7 +23,6 @@ subprojects {
         compile 'com.google.code.findbugs:jsr305:3.0.1'
         testCompile('log4j:log4j:1.2.16')
     }
-    group = "cn.leancloud"
 
     publishing {
         repositories {
@@ -31,8 +30,8 @@ subprojects {
                 name = "Netflix Archaius"
                 url = uri("https://maven.pkg.github.com/leancloud/archaius")
                 credentials {
-                    username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-                    password = project.findProperty("gpr.key") ?: System.getenv("PASSWORD")
+                    username = System.getenv("GH_USERNAME")
+                    password = System.getenv("GH_TOKEN")
                 }
             }
         }
