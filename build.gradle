@@ -25,6 +25,10 @@ subprojects {
     }
     group = "cn.leancloud"
 
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+    }
+
     tasks.withType(Test) { forkEvery = 1 }
     test {
         jvmArgs += [ "-XX:MaxPermSize=512m" ] // for archaius-scala
