@@ -1,13 +1,14 @@
 plugins {
     id 'nebula.netflixoss' version '2.2.10'
     id 'nebula.provided-base' version '2.0.1'
+    id 'com.bmuschko.nexus' version '2.3.1'
 }
 
 // Establish version and status
 ext.githubProjectName = rootProject.name // Change if github project name is not the same as the root project's name
 
 subprojects {
-    apply plugin: 'nebula.netflixoss'
+    // apply plugin: 'nebula.netflixoss'
     apply plugin: 'nebula.provided-base'
     apply plugin: 'java'
     apply plugin: 'com.bmuschko.nexus'
@@ -20,7 +21,6 @@ subprojects {
     }
     dependencies {
         compile 'com.google.code.findbugs:jsr305:3.0.1'
-        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
         testCompile('log4j:log4j:1.2.16')
     }
     group = "cn.leancloud"
