@@ -1,6 +1,7 @@
 plugins {
     id 'nebula.netflixoss' version '2.2.10'
     id 'nebula.provided-base' version '2.0.1'
+    id 'com.bmuschko.nexus' version '2.3.1'
     id 'maven-publish'
 }
 
@@ -11,6 +12,9 @@ subprojects {
     // apply plugin: 'nebula.netflixoss'
     apply plugin: 'nebula.provided-base'
     apply plugin: 'java'
+    // publish to sonatype
+    apply plugin: "com.bmuschko.nexus"
+    // publish to github
     apply plugin: "maven-publish"
 
     sourceCompatibility = 1.6
