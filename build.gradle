@@ -60,6 +60,33 @@ subprojects {
             showStandardStreams  = true
         }
     }
+
+    modifyPom {
+     project {
+         name 'Netflix Archaius'
+         description 'A fork of Netflix Archaius'
+         url 'https://github.com/leancloud/archaius'
+
+         scm {
+             url 'https://github.com/leancloud/archaius'
+         }
+
+         licenses {
+             license {
+                 name 'The Apache Software License, Version 2.0'
+                 url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                 distribution 'repo'
+             }
+         }
+
+         developers {
+             developer {
+                 name 'eng@leancloud.rocks'
+                 organization 'LeanCloud'
+             }
+         }
+     }
+   }
 }
 
 project(':archaius-core') {
