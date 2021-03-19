@@ -160,6 +160,8 @@ public class URLConfigurationSource implements PolledConfigurationSource {
         String[] fileNames;
         if (name != null) {
             fileNames = name.split(",");
+            // filter out empty string in the middle
+            fileNames = Arrays.stream(fileNames).filter(s -> !s.isEmpty()).toArray(String[]::new);
         } else {
             fileNames = new String[0];
         }
