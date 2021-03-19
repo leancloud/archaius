@@ -17,8 +17,8 @@ subprojects {
     // publish to github
     apply plugin: "maven-publish"
 
-    sourceCompatibility = 1.6
-    targetCompatibility = 1.6
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 
     repositories {
         jcenter()
@@ -154,8 +154,8 @@ project(':archaius-zookeeper') {
 }
 
 project(':archaius-etcd') {
-    sourceCompatibility = 1.7
-    targetCompatibility = 1.7
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 
     dependencies {
         compile project(':archaius-core')
